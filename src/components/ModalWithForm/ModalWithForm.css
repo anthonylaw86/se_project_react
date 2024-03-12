@@ -86,6 +86,7 @@
 
 .modal__label_type_radio {
   margin-bottom: 8px;
+  accent-color: #000;
 }
 
 .modal__radio-buttons {
