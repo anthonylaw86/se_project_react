@@ -9,8 +9,7 @@
   position: relative;
   width: 326px;
   height: 323px;
-  border: 1px solid #000000;
-  opacity: 0.3;
+  border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   overflow: hidden;
   flex-direction: column;
@@ -26,7 +25,6 @@
 .card__name {
   position: absolute;
   top: 15px;
-  left: 38%;
   margin: 0;
   padding: 0;
   border: 4px;
