@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "CabinetGrotesk-b";
+  src: url("../../vendor/CabinetGrotesk-Bold.otf");
+}
+
+.modal__content_type_image {
+  overflow: hidden;
+  padding: 0;
+}
+
+.modal__image {
+  width: 498px;
+  height: 498px;
+  overflow: contain;
+  margin: 0;
+  padding: 0;
+}
+
+.modal__close {
+  width: 20px;
+  height: 20px;
+  right: 24px;
+  top: 24px;
+}
+
+.modal__footer {
+  margin-left: 32px;
+  margin-bottom: 32px;
+  font-family: "CabinetGrotesk-b";
+  font-weight: 700;
+  line-height: 24px;
+  font-size: 20px;
+}
+
+.modal__caption {
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.modal__weather {
+  margin-top: 0;
+}
