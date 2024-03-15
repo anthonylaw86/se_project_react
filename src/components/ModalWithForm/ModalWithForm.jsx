@@ -1,14 +1,7 @@
 import "./ModalWithForm.css";
 import close from "../../assets/close.svg";
 
-function ModalWithForm({
-  children,
-  buttonText,
-  title,
-  activeModal,
-  onClose,
-  isOpen,
-}) {
+function ModalWithForm({ children, buttonText, title, onClose, isOpen }) {
   return (
     <div className={isOpen}>
       <div className="modal__content">
