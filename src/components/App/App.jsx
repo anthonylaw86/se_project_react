@@ -53,7 +53,7 @@ function App() {
         activeModal={activeModal}
         onClose={closeActiveModal}
       >
-        <label htmlFor="name" className="modal__label">
+        <label className="modal__label">
           Name{" "}
           <input
             type="text"
@@ -62,7 +62,7 @@ function App() {
             placeholder="Name"
           />
         </label>
-        <label htmlFor="imageUrl" className="modal__label">
+        <label className="modal__label">
           Image{" "}
           <input
             type="url"
@@ -79,6 +79,7 @@ function App() {
               type="radio"
               className="modal__radio-input"
               value="black"
+              name="radiobutton"
             />
             Hot
           </label>
@@ -86,14 +87,24 @@ function App() {
             htmlFor="warm"
             className="modal__label modal__label_type_radio"
           >
-            <input id="warm" type="radio" className="modal__radio-input" />
+            <input
+              id="warm"
+              type="radio"
+              className="modal__radio-input"
+              name="radiobutton"
+            />
             Warm
           </label>
           <label
             htmlFor="cold"
             className="modal__label modal__label_type_radio"
           >
-            <input id="cold" type="radio" className="modal__radio-input" />
+            <input
+              id="cold"
+              type="radio"
+              className="modal__radio-input"
+              name="radiobutton"
+            />
             Cold
           </label>
         </fieldset>
