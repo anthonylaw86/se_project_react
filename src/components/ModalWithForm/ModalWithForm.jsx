@@ -9,8 +9,6 @@ function ModalWithForm({
   onClose,
   isOpen,
 }) {
-  isOpen = `modal ${activeModal === "add-garment" && "modal_opened"}`;
-
   return (
     <div className={isOpen}>
       <div className="modal__content">
