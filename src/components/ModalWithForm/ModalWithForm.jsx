@@ -3,11 +3,11 @@ import close from "../../assets/close.svg";
 
 function ModalWithForm({ children, buttonText, title, onClose, isOpen }) {
   return (
-    <div className={isOpen}>
+    <div className={`modal ${isOpen && "modal_opened"} `}>
       <div className="modal__content">
         <h2 className="modal__title">{title}</h2>
         <button onClick={onClose} type="button" className="modal__close">
-          <img src={close} alt="" className="modal__close_image" />
+          <img src={close} alt="close" className="modal__close_image" />
         </button>
         <form className="modal__form">
           {children}

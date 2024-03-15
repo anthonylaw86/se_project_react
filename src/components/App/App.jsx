@@ -31,8 +31,6 @@ function App() {
     setActiveModal("");
   };
 
-  let isOpen = `modal ${activeModal === "add-garment" && "modal_opened"}`;
-
   useEffect(() => {
     getWeather(coordinates, APIkey)
       .then((data) => {
@@ -54,7 +52,7 @@ function App() {
         buttonText="Add garment"
         activeModal={activeModal}
         onClose={closeActiveModal}
-        isOpen={isOpen}
+        isOpen={activeModal === "add-garment"}
       >
         <label className="modal__label">
           Name{" "}
