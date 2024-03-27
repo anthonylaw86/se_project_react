@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "CabinetGrotesk";
+  src: url(../../vendor/CabinetGrotesk-Medium.otf);
+}
+
+.switch {
+  display: flex;
+  position: relative;
+}
+
+.switch__box {
+  border-radius: 25px;
+  border: 2px solid black;
+  width: 50px;
+  height: 30px;
+  appearance: none;
+}
+.switch__slider {
+  border-radius: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  font-family: "CabinetGrotesk";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17.36px;
+}
+
+.switch__slider-F {
+  top: 0px;
+  left: 20px;
+}
+
+.switch__slider-C {
+  top: 0px;
+  left: 1px;
+}
+
+.switch__temp-F {
+  position: absolute;
+  top: -7;
+  left: 34px;
+  color: white;
+}
+
+.switch__temp-C {
+  position: absolute;
+  top: -10px;
+  left: 9px;
+  color: white;
+}
+
+.switch__active {
+  color: white;
+  font-family: "CabinetGrotesk";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17.36px;
+}
