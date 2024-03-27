@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "./ToggleSwitch.css";
 
 const ToggleSwitch = () => {
-  const [currentTemperatureUnit, hanldeToggleSwitchChange] = useState("C");
+  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("C");
 
   const handleChange = (e) => {
-    if (currentTemperatureUnit === "C") hanldeToggleSwitchChange("F");
-    if (currentTemperatureUnit === "F") hanldeToggleSwitchChange("C");
+    if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
+    if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
   };
 
   console.log(currentTemperatureUnit);
