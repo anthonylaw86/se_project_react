@@ -24,10 +24,6 @@
   text-align: center;
   cursor: pointer;
   position: absolute;
-  font-family: "CabinetGrotesk";
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 17.36px;
 }
 
 .switch__slider-F {
@@ -42,7 +38,7 @@
 
 .switch__temp-F {
   position: absolute;
-  top: -7;
+  top: -6;
   left: 34px;
   color: white;
 }
