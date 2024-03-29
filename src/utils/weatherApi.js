@@ -19,8 +19,8 @@ export const filterWeatherData = (data) => {
   result.isDay = isDay(data.sys, Date.now());
   result.weather = {
     temp: {
-      F: Math.round(data.main.temp),
-      C: Math.round(((data.main.temp - 32) * 5) / 9),
+      F: `${Math.round(data.main.temp)}°F`,
+      C: `${Math.round(((data.main.temp - 32) * 5) / 9)}°C`,
     },
   };
 
