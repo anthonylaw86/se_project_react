@@ -11,22 +11,23 @@ function Main({ weatherData, handleCardClick }) {
   const temp = weatherData?.temp?.[currentTemperatureUnit] || 999;
 
   // console.log(temp);
-  const weatherType = useMemo(() => {
-    if (temp >= 86) {
-      return "hot";
-    } else if (temp >= 66 && temp <= 85) {
-      return "warm";
-    } else if (temp <= 65) {
-      return "cold";
-    }
-  }, [weatherData]);
+  // const weatherType = useMemo(() => {
+  //   if (temp >= 86) {
+  //     return "hot";
+  //   } else if (temp >= 66 && temp <= 85) {
+  //     return "warm";
+  //   } else if (temp <= 65) {
+  //     return "cold";
+  //   }
+  // }, [weatherData]);
 
   return (
     <main>
       <WeatherCard weatherData={temp} />
       <section className="cards">
         <p className="cards__text">
-          Today is {temp} &deg; F / You may want to wear:
+          Today is {temp} &deg; {[currentTemperatureUnit]} / You may want to
+          wear:
         </p>
         <ul className="cards__list">
           {defaultClothingItems

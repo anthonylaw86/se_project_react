@@ -3,6 +3,10 @@ import "./ToggleSwitch.css";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
 
 const ToggleSwitch = () => {
+  //   currentTemperatureUnit === 'F'
+  //     ? setCurrentTemperatureUnit('C')
+  //     : setCurrentTemperatureUnit('F');
+  // };
   // const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("C");
 
   // const handleChange = (e) => {
