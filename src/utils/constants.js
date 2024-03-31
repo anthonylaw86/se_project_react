@@ -1,3 +1,5 @@
+import Api from "../utils/api";
+
 export const weatherOptions = [
   {
     day: true,
@@ -115,3 +117,5 @@ export const coordinates = {
 };
 
 export const APIkey = "6f1c858811040adc049c9e0e4faa4d9d";
+
+export const api = new Api("http://localhost:3002");

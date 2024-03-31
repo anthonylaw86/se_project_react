@@ -12,6 +12,7 @@ import { filterWeatherData, getWeather } from "../../utils/weatherApi";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
+import { api } from "../../utils/constants";
 
 function App({ handleSubmit }) {
   const [weatherData, setWeatherData] = useState({
@@ -22,6 +23,7 @@ function App({ handleSubmit }) {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [clothingItems, setClothingItems] = useState([]);
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -30,6 +32,18 @@ function App({ handleSubmit }) {
 
   const handleAddClick = () => {
     setActiveModal("add-garment");
+  };
+
+  const handleAddItemSubmit = ({ name, imageUrl, weather }) => {
+    api
+      .addNewClothingItems({ name, imageUrl, weather })
+      .then((newClothingItem) => {
+        setClothingItems([newClothingItem, ...clothingItems]);
+        closeActiveModal();
+      })
+      .catch((res) => {
+        console.log(`Error`);
+      });
   };
 
   const closeActiveModal = () => {
@@ -74,8 +88,7 @@ function App({ handleSubmit }) {
             />
             <Route
               path="/profile"
-              element={<Profile />}
-              onCardClick={handleCardClick}
+              element={<Profile onCardClick={handleCardClick} />}
             />
           </Routes>
 
@@ -85,7 +98,7 @@ function App({ handleSubmit }) {
           <AddItemModal
             onClose={closeActiveModal}
             isOpen={activeModal === "add-garment"}
-            onAddItem={onAddItem}
+            onAddItem={handleAddItemSubmit}
             onSubmit={handleSubmit}
           />
         )}
