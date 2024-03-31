@@ -42,7 +42,7 @@ function App({ handleSubmit }) {
         closeActiveModal();
       })
       .catch((res) => {
-        console.log(`Error`);
+        console.log(`Error: ${res}`);
       });
   };
 
@@ -60,7 +60,21 @@ function App({ handleSubmit }) {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
       })
-      .catch(console.error);
+      .catch((res) => {
+        console.log(`Error: ${res}`);
+      });
+  }, []);
+
+  useEffect(() => {
+    api
+      .getClothingItems()
+      .then((items) => {
+        setClothingItems(items);
+        console.log(clothingItems);
+      })
+      .catch((res) => {
+        console.log(`Error: ${res}`);
+      });
   }, []);
 
   const handleToggleSwitchChange = () => {

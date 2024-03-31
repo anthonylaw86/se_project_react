@@ -51,70 +51,62 @@ const AddItemModal = ({
       onSubmit={handleSubmit}
       //   isOpen={activeModal === "add-garment"}
     >
-      <form>
-        <label className="modal__label">
-          Name{" "}
+      <label className="modal__label">
+        Name{" "}
+        <input
+          type="text"
+          className="modal__input"
+          id="name"
+          placeholder="Name"
+          value={name}
+          onChange={handleNameChange}
+        />
+      </label>
+      <label className="modal__label">
+        Image{" "}
+        <input
+          type="url"
+          className="modal__input"
+          id="imageUrl"
+          placeholder="Image URL"
+          value={link}
+          onChange={handleUrlChange}
+        />
+      </label>
+      <fieldset className="modal__radio-buttons">
+        <legend className="modal__legend">Select the weather type:</legend>
+        <label htmlFor="hot" className="modal__label modal__label_type_radio">
           <input
-            type="text"
-            className="modal__input"
-            id="name"
-            placeholder="Name"
-            value={name}
-            onChange={handleNameChange}
+            id="hot"
+            type="radio"
+            className="modal__radio-input"
+            value="black"
+            name="radiobutton"
+            onChange={handleWeatherChange}
           />
+          Hot
         </label>
-        <label className="modal__label">
-          Image{" "}
+        <label htmlFor="warm" className="modal__label modal__label_type_radio">
           <input
-            type="url"
-            className="modal__input"
-            id="imageUrl"
-            placeholder="Image URL"
-            value={link}
-            onChange={handleUrlChange}
+            id="warm"
+            type="radio"
+            className="modal__radio-input"
+            name="radiobutton"
+            onChange={handleWeatherChange}
           />
+          Warm
         </label>
-        <fieldset className="modal__radio-buttons">
-          <legend className="modal__legend">Select the weather type:</legend>
-          <label htmlFor="hot" className="modal__label modal__label_type_radio">
-            <input
-              id="hot"
-              type="radio"
-              className="modal__radio-input"
-              value="black"
-              name="radiobutton"
-              onChange={handleWeatherChange}
-            />
-            Hot
-          </label>
-          <label
-            htmlFor="warm"
-            className="modal__label modal__label_type_radio"
-          >
-            <input
-              id="warm"
-              type="radio"
-              className="modal__radio-input"
-              name="radiobutton"
-              onChange={handleWeatherChange}
-            />
-            Warm
-          </label>
-          <label
-            htmlFor="cold"
-            className="modal__label modal__label_type_radio"
-          >
-            <input
-              id="cold"
-              type="radio"
-              className="modal__radio-input"
-              name="radiobutton"
-              onChange={handleWeatherChange}
-            />
-            Cold
-          </label>
-        </fieldset>
-      </form>
+        <label htmlFor="cold" className="modal__label modal__label_type_radio">
+          <input
+            id="cold"
+            type="radio"
+            className="modal__radio-input"
+            name="radiobutton"
+            onChange={handleWeatherChange}
+          />
+          Cold
+        </label>
+      </fieldset>
     </ModalWithForm>
   );
 };

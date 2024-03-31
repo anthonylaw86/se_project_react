@@ -118,4 +118,4 @@ export const coordinates = {
 
 export const APIkey = "6f1c858811040adc049c9e0e4faa4d9d";
 
-export const api = new Api("http://localhost:3002");
+export const api = new Api("http://localhost:3001");

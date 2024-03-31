@@ -1,5 +1,5 @@
 class Api {
-  constructor({ baseUrl = "http://localhost:3002", headers }) {
+  constructor({ baseUrl = "http://localhost:3001", headers }) {
     this._baseUrl = baseUrl;
     this.headers = {
       "Content-Type": "application/json",
