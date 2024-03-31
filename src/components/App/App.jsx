@@ -13,7 +13,7 @@ import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUni
 import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
 
-function App() {
+function App({ handleSubmit }) {
   const [weatherData, setWeatherData] = useState({
     type: "",
     temp: { F: 999 },
@@ -69,13 +69,14 @@ function App() {
             <Route
               path="/"
               element={
-                <Main
-                  weatherData={weatherData}
-                  handleCardClick={handleCardClick}
-                />
+                <Main weatherData={weatherData} onCardClick={handleCardClick} />
               }
             />
-            <Route path="/profile" element={<Profile />} />
+            <Route
+              path="/profile"
+              element={<Profile />}
+              onCardClick={handleCardClick}
+            />
           </Routes>
 
           <Footer />
@@ -85,6 +86,7 @@ function App() {
             onClose={closeActiveModal}
             isOpen={activeModal === "add-garment"}
             onAddItem={onAddItem}
+            onSubmit={handleSubmit}
           />
         )}
         <ItemModal

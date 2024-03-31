@@ -30,7 +30,7 @@
   padding: 0;
 }
 
-.clothes-section__cards_list {
+.clothes-section__items {
   display: flex;
   gap: 21px;
   list-style-type: none;
