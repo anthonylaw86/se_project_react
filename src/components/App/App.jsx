@@ -34,6 +34,18 @@ function App({ handleSubmit }) {
     setActiveModal("add-garment");
   };
 
+  const handleDeleteCard = (card) => {
+    api
+      .deleteClothingItem(card._id)
+      .then(() => {
+        setClothingItems((cards) => cards.filter((x) => x._id !== card._id));
+        closeActiveModal();
+      })
+      .catch((res) => {
+        console.log(`Error: ${res}`);
+      });
+  };
+
   const handleAddItemSubmit = ({ name, imageUrl, weather }) => {
     api
       .addNewClothingItems({ name, imageUrl, weather })
@@ -81,8 +93,6 @@ function App({ handleSubmit }) {
     currentTemperatureUnit === "F"
       ? setCurrentTemperatureUnit("C")
       : setCurrentTemperatureUnit("F");
-    // if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
-    // if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
   };
 
   return (
@@ -97,12 +107,18 @@ function App({ handleSubmit }) {
             <Route
               path="/"
               element={
-                <Main weatherData={weatherData} onCardClick={handleCardClick} />
+                <Main
+                  weatherData={weatherData}
+                  onCardClick={handleCardClick}
+                  cards={clothingItems}
+                />
               }
             />
             <Route
               path="/profile"
-              element={<Profile onCardClick={handleCardClick} />}
+              element={
+                <Profile onCardClick={handleCardClick} cards={clothingItems} />
+              }
             />
           </Routes>
 

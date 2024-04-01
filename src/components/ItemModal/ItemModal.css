@@ -3,6 +3,11 @@
   src: url("../../vendor/CabinetGrotesk-Bold.otf");
 }
 
+@font-face {
+  font-family: "CabinetGrotesk-m";
+  src: url("../../vendor/CabinetGrotesk-Medium.otf");
+}
+
 .modal__content_type_image {
   overflow: hidden;
   padding: 0;
@@ -26,17 +31,31 @@
 .modal__footer {
   margin-left: 32px;
   margin-bottom: 32px;
-  font-family: "CabinetGrotesk-b";
+  font-family: "CabinetGrotesk-m";
   font-weight: 700;
   line-height: 24px;
   font-size: 20px;
 }
 
 .modal__caption {
-  margin-top: 20px;
+  margin-top: 19px;
   margin-bottom: 12px;
 }
 
 .modal__weather {
   margin-top: 0;
+}
+
+.modal__button {
+  position: relative;
+  bottom: 96px;
+  left: 365px;
+  background-color: transparent;
+  border: none;
+  font-family: "CabinetGrotesk-m";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ff4d00;
+  padding: 0;
 }
