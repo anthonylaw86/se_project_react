@@ -111,13 +111,18 @@ function App({ handleSubmit }) {
                   weatherData={weatherData}
                   onCardClick={handleCardClick}
                   cards={clothingItems}
+                  onCardDelete={handleDeleteCard}
                 />
               }
             />
             <Route
               path="/profile"
               element={
-                <Profile onCardClick={handleCardClick} cards={clothingItems} />
+                <Profile
+                  onCardClick={handleCardClick}
+                  cards={clothingItems}
+                  onCardDelete={handleDeleteCard}
+                />
               }
             />
           </Routes>
