@@ -18,8 +18,13 @@ function ModalWithForm({
         </button>
         <form onSubmit={onSubmit} className="modal__form">
           {children}
-          <button type="submit" className="modal__submit">
-            <p className="modal__submit_text">{buttonText}</p>
+          <button
+            type="submit"
+            className="modal__submit modal__submit-disabled"
+          >
+            <p className="modal__submit_text" onSubmit={onSubmit}>
+              {buttonText}{" "}
+            </p>
           </button>
         </form>
       </div>

@@ -14,7 +14,7 @@ import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
 import { api } from "../../utils/constants";
 
-function App({ handleSubmit }) {
+function App() {
   const [weatherData, setWeatherData] = useState({
     type: "",
     temp: { F: 999 },
@@ -60,10 +60,6 @@ function App({ handleSubmit }) {
 
   const closeActiveModal = () => {
     setActiveModal("");
-  };
-
-  const onAddItem = (values) => {
-    console.log(values);
   };
 
   useEffect(() => {
@@ -133,8 +129,7 @@ function App({ handleSubmit }) {
           <AddItemModal
             onClose={closeActiveModal}
             isOpen={activeModal === "add-garment"}
-            onAddItem={handleAddItemSubmit}
-            onSubmit={handleSubmit}
+            onSubmit={handleAddItemSubmit}
           />
         )}
         <ItemModal

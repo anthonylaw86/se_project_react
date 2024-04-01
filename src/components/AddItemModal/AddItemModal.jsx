@@ -48,7 +48,7 @@ const AddItemModal = ({
       activeModal={activeModal === "add-garment"}
       onClose={onClose}
       isOpen={isOpen}
-      onSubmit={handleSubmit}
+      onSubmit={onSubmit}
     >
       <label className="modal__label">
         Name{" "}
@@ -59,6 +59,9 @@ const AddItemModal = ({
           placeholder="Name"
           value={name}
           onChange={handleNameChange}
+          minLength="2"
+          maxLength="40"
+          required
         />
       </label>
       <label className="modal__label">
@@ -70,6 +73,7 @@ const AddItemModal = ({
           placeholder="Image URL"
           value={link}
           onChange={handleUrlChange}
+          required
         />
       </label>
       <fieldset className="modal__radio-buttons">
