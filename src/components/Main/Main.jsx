@@ -5,7 +5,7 @@ import "./Main.css";
 import { useMemo, useContext } from "react";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
 
-function Main({ weatherData, onCardClick, onCardDelete }) {
+function Main({ weatherData, onCardClick, onCardDelete, cards }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   console.log(currentTemperatureUnit);
   const temp = weatherData?.temp?.[currentTemperatureUnit] || 999;
@@ -30,7 +30,7 @@ function Main({ weatherData, onCardClick, onCardDelete }) {
           wear:
         </p>
         <ul className="cards__list">
-          {defaultClothingItems
+          {cards
             .filter((item) => {
               return item.weather === weatherData.type;
             })

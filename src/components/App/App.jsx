@@ -129,13 +129,14 @@ function App() {
           <AddItemModal
             onClose={closeActiveModal}
             isOpen={activeModal === "add-garment"}
-            onSubmit={handleAddItemSubmit}
+            onAddItem={handleAddItemSubmit}
           />
         )}
         <ItemModal
           activeModal={activeModal}
           card={selectedCard}
           onClose={closeActiveModal}
+          onCardDelete={handleDeleteCard}
         />
       </CurrentTemperatureUnitContext.Provider>
     </div>
