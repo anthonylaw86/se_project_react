@@ -4,9 +4,10 @@
 }
 
 .sidebar {
+  max-width: 229px;
+  width: 100%;
   display: flex;
-  /* width: 229px;
-  height: 56px; */
+  flex-wrap: nowrap;
 }
 
 .sidebar__avatar {
@@ -16,11 +17,12 @@
 }
 
 .sidebar__username {
-  /* width: 157px; */
   font-family: "CabinetGrotesk";
   font-weight: 700;
   font-size: 20px;
   line-height: 24.8px;
   color: black;
   margin: 0;
+  position: relative;
+  top: 10px;
 }
