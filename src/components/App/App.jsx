@@ -35,8 +35,9 @@ function App() {
   };
 
   const handleDeleteCard = (card) => {
+    console.log(card);
     api
-      .deleteClothingItem(card)
+      .deleteClothingItem(card._id)
       .then(() => {
         setClothingItems((cards) => cards.filter((x) => x._id !== card._id));
         closeActiveModal();

@@ -3,10 +3,9 @@ import close from "../../assets/close.svg";
 
 function ItemModal({ activeModal, onClose, card, onCardDelete }) {
   const handleDeletCard = () => {
-    onCardDelete();
+    onCardDelete(card);
   };
 
- 
   return (
     <div className={`modal ${activeModal === "preview" && "modal_opened"}`}>
       <div className="modal__content modal__content_type_image">
