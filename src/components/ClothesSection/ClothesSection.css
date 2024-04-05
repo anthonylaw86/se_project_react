@@ -3,9 +3,6 @@
   src: url("../../vendor/CabinetGrotesk-Medium.otf");
 }
 
-.clothes-section {
-}
-
 .clothes-section-header {
   display: flex;
   gap: 20px;
