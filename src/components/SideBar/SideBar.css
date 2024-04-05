@@ -4,10 +4,9 @@
 }
 
 .sidebar {
-  max-width: 229px;
-  width: 100%;
   display: flex;
-  flex-wrap: nowrap;
+  width: 229px;
+  height: 56px;
 }
 
 .sidebar__avatar {

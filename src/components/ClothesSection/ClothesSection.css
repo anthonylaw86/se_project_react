@@ -30,6 +30,11 @@
   padding: 0;
 }
 
+.clothes-section-button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
 .clothes-section__items {
   display: flex;
   row-gap: 18px;
