@@ -8,12 +8,12 @@ import React from "react";
 
 function Main({ weatherData, onCardClick, onCardDelete, cards }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
-  console.log(currentTemperatureUnit);
+  console.log(weatherData);
   const temp = weatherData?.temp?.[currentTemperatureUnit] || 999;
 
   return (
     <main>
-      <WeatherCard weatherData={weatherData.temp[currentTemperatureUnit]} />
+      <WeatherCard weatherData={weatherData?.temp[currentTemperatureUnit]} />
       <section className="cards">
         <p className="cards__text">
           Today is {temp} &deg; {[currentTemperatureUnit]} / You may want to

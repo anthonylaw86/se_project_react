@@ -5,6 +5,7 @@ import {
 } from "../../../utils/constants";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import { useContext } from "react";
+import React from "react";
 
 function WeatherCard({ weatherData }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
@@ -26,7 +27,8 @@ function WeatherCard({ weatherData }) {
   return (
     <section className="weather-card">
       <p className="weather-card__temp">
-        {weatherData} &deg; {[currentTemperatureUnit]}
+        {weatherData?.temp[currentTemperatureUnit]} &deg;{" "}
+        {[currentTemperatureUnit]}
       </p>
       <img
         src={weatherOption?.url}
