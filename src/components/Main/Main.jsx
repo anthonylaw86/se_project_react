@@ -12,7 +12,7 @@ function Main({ weatherData, onCardClick, onCardDelete, cards }) {
 
   return (
     <main>
-      <WeatherCard weatherData={weatherData?.temp[currentTemperatureUnit]} />
+      <WeatherCard weatherData={weatherData} />
       <section className="cards">
         <p className="cards__text">
           Today is {temp} &deg; {[currentTemperatureUnit]} / You may want to
