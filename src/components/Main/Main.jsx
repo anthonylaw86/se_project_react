@@ -10,11 +10,10 @@ function Main({ weatherData, onCardClick, onCardDelete, cards }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   console.log(currentTemperatureUnit);
   const temp = weatherData?.temp?.[currentTemperatureUnit] || 999;
-  console.log(weatherData);
 
   return (
     <main>
-      <WeatherCard weatherData={weatherData} />
+      <WeatherCard weatherData={weatherData.temp[currentTemperatureUnit]} />
       <section className="cards">
         <p className="cards__text">
           Today is {temp} &deg; {[currentTemperatureUnit]} / You may want to
