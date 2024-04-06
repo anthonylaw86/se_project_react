@@ -4,15 +4,17 @@ import ItemCard from "./ItemCard/ItemCard";
 import "./Main.css";
 import { useMemo, useContext } from "react";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
+import React from "react";
 
 function Main({ weatherData, onCardClick, onCardDelete, cards }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   console.log(currentTemperatureUnit);
   const temp = weatherData?.temp?.[currentTemperatureUnit] || 999;
+  console.log(weatherData);
 
   return (
     <main>
-      <WeatherCard weatherData={temp} />
+      <WeatherCard weatherData={weatherData} />
       <section className="cards">
         <p className="cards__text">
           Today is {temp} &deg; {[currentTemperatureUnit]} / You may want to
