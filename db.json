@@ -107,6 +107,12 @@
       "weather": "hot",
       "imageUrl": "https://media.istockphoto.com/id/1404031603/photo/blank-black-bucket-hat-mockup-no-gravity.jpg?s=2048x2048&w=is&k=20&c=vi8wv3XDdwSLE4WS5ymNCQpwoQsgGyislNxnzy0PMgk=",
       "_id": 18
+    },
+    {
+      "name": "Hat",
+      "weather": "hot",
+      "imageUrl": "https://media.istockphoto.com/id/1404031603/photo/blank-black-bucket-hat-mockup-no-gravity.jpg?s=2048x2048&w=is&k=20&c=vi8wv3XDdwSLE4WS5ymNCQpwoQsgGyislNxnzy0PMgk=",
+      "_id": 19
     }
   ]
 }

@@ -128,13 +128,13 @@ function App() {
 
           <Footer />
         </div>
-        {activeModal === "add-garment" && (
-          <AddItemModal
-            onClose={closeActiveModal}
-            isOpen={activeModal === "add-garment"}
-            onAddItem={handleAddItemSubmit}
-          />
-        )}
+
+        <AddItemModal
+          onClose={closeActiveModal}
+          isOpen={activeModal === "add-garment"}
+          onAddItem={handleAddItemSubmit}
+        />
+
         <ItemModal
           activeModal={activeModal}
           card={selectedCard}
