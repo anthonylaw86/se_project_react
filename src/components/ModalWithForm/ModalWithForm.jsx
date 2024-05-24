@@ -22,9 +22,7 @@ function ModalWithForm({
             type="submit"
             className="modal__submit modal__submit-disabled"
           >
-            <p className="modal__submit_text" onSubmit={onSubmit}>
-              {buttonText}{" "}
-            </p>
+            <p className="modal__submit_text">{buttonText} </p>
           </button>
         </form>
       </div>

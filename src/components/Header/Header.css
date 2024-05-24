@@ -50,3 +50,8 @@
   text-decoration: none;
   color: black;
 }
+
+.header__button {
+  border: none;
+  font-family: "CabinetGrotesk";
+}

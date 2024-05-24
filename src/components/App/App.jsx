@@ -32,7 +32,7 @@ function App() {
     temp: { F: 999 },
     city: "",
   });
-  const [activeModal, setActiveModal] = useState("login");
+  const [activeModal, setActiveModal] = useState("signup");
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
@@ -59,7 +59,7 @@ function App() {
     setActiveModal("");
   };
 
-  const handleSignupModal = () => {
+  const handleSignUpModal = () => {
     setActiveModal("signup");
   };
 
@@ -99,7 +99,7 @@ function App() {
     auth
       .signup({ email, password, name, avatar })
       .then(() => {
-        handleSignupModal({ email, password, name, avatar });
+        handleSignUpModal({ email, password, name, avatar });
         closeActiveModal();
         setCurrentUser({ email, password, name, avatar });
         setLoggedIn(true);
@@ -166,7 +166,7 @@ function App() {
             <Header
               handleAddClick={handleAddClick}
               weatherData={weatherData}
-              handleSignupModal={handleSignupModal}
+              handleSignUpModal={handleSignUpModal}
               handleLoginModal={handleLoginModal}
               isLoggedIn={loggedIn}
             />
@@ -224,7 +224,7 @@ function App() {
           <LoginModal
             isOpen={activeModal === "login"}
             onClose={closeActiveModal}
-            handleSignupModal={handleSignupModal}
+            handleSignupModal={handleSignUpModal}
             handleLogin={handleLogin}
           />
         </div>

@@ -5,31 +5,27 @@ import { useState, useEffect } from "react";
 const RegisterModal = ({ onClose, isOpen, handleSignUp, handleLogin }) => {
   const [email, setEmail] = useState("");
   const handleEmailChange = (e) => {
-    console.log(e.target.value);
     setEmail(e.target.value);
   };
 
   const [password, setPassword] = useState("");
   const handlePasswordChange = (e) => {
-    console.log(e.target.value);
     setPassword(e.target.value);
   };
 
   const [name, setName] = useState("");
   const handleNameChange = (e) => {
-    console.log(e.target.value);
     setName(e.target.value);
   };
 
   const [avatar, setAvatar] = useState("");
   const handleAvatarChange = (e) => {
-    console.log(e.target.value);
     setAvatar(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleSignUp({email, password, name, avatar})
+    handleSignUp({ email, password, name, avatar });
   };
 
   useEffect(() => {
@@ -43,7 +39,7 @@ const RegisterModal = ({ onClose, isOpen, handleSignUp, handleLogin }) => {
 
   return (
     <ModalWithForm
-      title="Sign Up"
+      title="Signup"
       buttonText="Sign Up"
       onClose={onClose}
       isOpen={isOpen}
