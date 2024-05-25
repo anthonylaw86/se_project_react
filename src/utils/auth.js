@@ -30,3 +30,13 @@ export const checkToken = (token) => {
     },
   }).then(checkResponse);
 };
+
+export const editProfile = ({ name, avatar }, token) => {
+  return fetch(`${baseUrl}/users/me`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then(checkResponse);
+};

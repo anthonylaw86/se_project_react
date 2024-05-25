@@ -10,6 +10,7 @@ import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
+import EditProfileModal from "../EditProfileModal/EditProfileModal";
 import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
 
 // Hooks and Routes
@@ -67,6 +68,10 @@ function App() {
     setActiveModal("login");
   };
 
+  const handleEditProfileModal = () => {
+    setActiveModal("edit");
+  };
+
   // Item Handlers
   const handleDeleteCard = (card) => {
     const token = localStorage.getItem("jwt");
@@ -114,6 +119,18 @@ function App() {
         handleLoginModal({ email, password });
         localStorage.setItem("jwt", res.token);
         setLoggedIn(true);
+        closeActiveModal();
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const handleEditProfile = ({ name, avatar }) => {
+    const token = localStorage.getItem("jwt");
+    auth
+      .editProfile({ name, avatar }, token)
+      .then((res) => {
+        handleEditProfileModal({ name, avatar });
+        setCurrentUser(res);
         closeActiveModal();
       })
       .catch((err) => console.log(err));
@@ -193,6 +210,7 @@ function App() {
                       cards={clothingItems}
                       onCardDelete={handleDeleteCard}
                       handleAddClick={handleAddClick}
+                      handleEditProfileModal={handleEditProfileModal}
                       loggedIn={loggedIn}
                     />
                   </ProtectedRoute>
@@ -228,6 +246,12 @@ function App() {
             onClose={closeActiveModal}
             handleSignUpModal={handleSignUpModal}
             handleLogin={handleLogin}
+          />
+
+          <EditProfileModal
+            isOpen={activeModal === "edit"}
+            onClose={closeActiveModal}
+            handleEditProfile={handleEditProfile}
           />
         </div>
       </CurrentTemperatureUnitContext.Provider>
