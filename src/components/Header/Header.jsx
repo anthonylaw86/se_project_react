@@ -19,6 +19,7 @@ function Header({
   });
 
   const currentUser = useContext(CurrentUserContext);
+  console.log(currentUser);
 
   return (
     <header className="header">
@@ -44,10 +45,10 @@ function Header({
 
             <Link to="/profile" className="header__link">
               <div className="header__user-container">
-                <p className="header__username" alt={currentUser?.name}></p>
+                <p className="header__username">{currentUser?.userId.name}</p>
                 <img
-                  src={currentUser?.avatar}
-                  alt="Terrance"
+                  src={currentUser?.userId.avatar}
+                  alt={currentUser?.userId.name}
                   className="header__avatar"
                 />
               </div>

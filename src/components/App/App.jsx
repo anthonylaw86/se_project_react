@@ -32,7 +32,7 @@ function App() {
     temp: { F: 999 },
     city: "",
   });
-  const [activeModal, setActiveModal] = useState("add-garment");
+  const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
@@ -180,6 +180,7 @@ function App() {
                     onCardClick={handleCardClick}
                     cards={clothingItems}
                     onCardDelete={handleDeleteCard}
+                    loggedIn={loggedIn}
                   />
                 }
               />
@@ -192,6 +193,7 @@ function App() {
                       cards={clothingItems}
                       onCardDelete={handleDeleteCard}
                       handleAddClick={handleAddClick}
+                      loggedIn={loggedIn}
                     />
                   </ProtectedRoute>
                 }
