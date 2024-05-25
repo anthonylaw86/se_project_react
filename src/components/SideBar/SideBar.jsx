@@ -1,11 +1,42 @@
 import avatar from "../../assets/avatar.png";
 import "./SideBar.css";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
-function SideBar() {
+function SideBar({ handleEditProfile, setLoggedIn }) {
+  const navigate = useNavigate();
+  const currentUser = useContext(CurrentUserContext);
   return (
     <div className="sidebar">
-      <img className="sidebar__avatar" src={avatar} alt="Default avatar" />
-      <p className="sidebar__username">Terrence Tegegne</p>
+      <div className="sidebar__container">
+        <img
+          className="sidebar__avatar"
+          src={currentUser?.userId.avatar}
+          alt="Default avatar"
+        />
+        <p className="sidebar__username">{currentUser?.userId.name}</p>
+      </div>
+      <div className="sidebar__profile-data">
+        <button
+          className="sidebar__user-button"
+          type="text"
+          onClick={handleEditProfile}
+        >
+          Change profile data
+        </button>
+        <button
+          className="sidebar__user-button"
+          type="text"
+          onClick={() => {
+            navigate("/");
+            setLoggedIn(false);
+            localStorage.removeItem("jwt");
+          }}
+        >
+          Log Out
+        </button>
+      </div>
     </div>
   );
 }

@@ -33,7 +33,7 @@ function App() {
     temp: { F: 999 },
     city: "",
   });
-  const [activeModal, setActiveModal] = useState("");
+  const [activeModal, setActiveModal] = useState("edit");
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
