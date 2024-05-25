@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "CabinetGrotesk-m";
+  src: url("../../vendor/CabinetGrotesk-Medium.otf");
+}
+
+.modal__button {
+  width: 124px;
+  height: 36px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0);
+  border: none;
+  margin-top: 24px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "CabinetGrotesk-m";
+  letter-spacing: 0em;
+  color: #fff;
+  margin: 0;
+}
+
+.modal__button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal__button-disabled {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal__button_text {
+}

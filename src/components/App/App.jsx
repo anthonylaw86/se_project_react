@@ -32,7 +32,7 @@ function App() {
     temp: { F: 999 },
     city: "",
   });
-  const [activeModal, setActiveModal] = useState("signup");
+  const [activeModal, setActiveModal] = useState("add-garment");
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
@@ -97,7 +97,7 @@ function App() {
   // Authorization Handlers
   const handleSignup = ({ email, password, name, avatar }) => {
     auth
-      .signup({ email, password, name, avatar })
+      .signUp({ email, password, name, avatar })
       .then(() => {
         handleSignUpModal({ email, password, name, avatar });
         closeActiveModal();
@@ -224,7 +224,7 @@ function App() {
           <LoginModal
             isOpen={activeModal === "login"}
             onClose={closeActiveModal}
-            handleSignupModal={handleSignUpModal}
+            handleSignUpModal={handleSignUpModal}
             handleLogin={handleLogin}
           />
         </div>

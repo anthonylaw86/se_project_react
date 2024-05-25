@@ -135,3 +135,17 @@
   color: #fff;
   margin: 0;
 }
+
+.modal__buttons-container {
+  margin: 0;
+  padding: 0;
+}
+
+.modal__button-or {
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0 10px;
+  color: rgb(0, 0, 0, 0.5);
+}

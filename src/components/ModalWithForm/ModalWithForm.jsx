@@ -8,6 +8,8 @@ function ModalWithForm({
   onClose,
   isOpen,
   onSubmit,
+  spanText,
+  orModal,
 }) {
   return (
     <div className={`modal ${isOpen && "modal_opened"} `}>
@@ -18,12 +20,21 @@ function ModalWithForm({
         </button>
         <form onSubmit={onSubmit} className="modal__form">
           {children}
-          <button
-            type="submit"
-            className="modal__submit modal__submit-disabled"
-          >
-            <p className="modal__submit_text">{buttonText} </p>
-          </button>
+          <div className="modal__buttons-container">
+            <button
+              type="submit"
+              className="modal__submit modal__submit-disabled"
+            >
+              <p className="modal__submit_text">{buttonText} </p>
+            </button>
+            <button
+              type="button"
+              className="modal__button-or"
+              onClick={orModal}
+            >
+              {spanText}
+            </button>
+          </div>
         </form>
       </div>
     </div>
