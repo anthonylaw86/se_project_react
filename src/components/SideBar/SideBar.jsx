@@ -12,10 +12,10 @@ function SideBar({ handleEditProfile, setLoggedIn }) {
       <div className="sidebar__container">
         <img
           className="sidebar__avatar"
-          src={currentUser?.userId.avatar}
+          src={currentUser?.avatar}
           alt="Default avatar"
         />
-        <p className="sidebar__username">{currentUser?.userId.name}</p>
+        <p className="sidebar__username">{currentUser?.name}</p>
       </div>
       <div className="sidebar__profile-data">
         <button

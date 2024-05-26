@@ -35,7 +35,7 @@ const addNewClothingItems = ({ name, imageUrl, weather }, token) => {
       "Content-Type": "application/json",
       authoriztion: `Bearer ${token}`,
     },
-    body: JSON.stringify({ name, weather, imageUrl }),
+    body: JSON.stringify({ name, imageUrl, weather }),
   }).then(checkResponse);
 };
 

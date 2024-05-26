@@ -89,7 +89,7 @@ function App() {
   const handleAddItemSubmit = ({ name, imageUrl, weather }) => {
     const token = localStorage.getItem("jwt");
     api
-      .addNewClothingItems({ name, imageUrl, weather })
+      .addNewClothingItems({ name, imageUrl, weather }, token)
       .then((newClothingItem) => {
         setClothingItems([newClothingItem, ...clothingItems]);
         closeActiveModal();

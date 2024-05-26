@@ -4,7 +4,7 @@ import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useContext } from "react";
 
 function ItemModal({ activeModal, onClose, card, onCardDelete }) {
-  const handleDeletCard = () => {
+  const handleDeleteCard = (e) => {
     e.preventDefault();
     onCardDelete(card);
   };
@@ -25,7 +25,7 @@ function ItemModal({ activeModal, onClose, card, onCardDelete }) {
           <p className="modal__weather">Weather: {card.weather}</p>
         </div>
         {isOwn ? (
-          <button className="modal__button" onClick={handleDeletCard}>
+          <button className="modal__button" onClick={handleDeleteCard}>
             Delete Item
           </button>
         ) : null}
