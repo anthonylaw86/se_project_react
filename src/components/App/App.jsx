@@ -90,8 +90,8 @@ function App() {
     const token = localStorage.getItem("jwt");
     api
       .addNewClothingItems({ name, imageUrl, weather }, token)
-      .then((newClothingItem) => {
-        setClothingItems([newClothingItem, ...clothingItems]);
+      .then(({ data }) => {
+        setClothingItems([data, ...clothingItems]);
         closeActiveModal();
       })
       .catch((res) => {
