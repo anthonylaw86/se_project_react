@@ -24,6 +24,7 @@ const AddItemModal = ({ onAddItem, isOpen, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddItem({ name, imageUrl, weather });
+    onClose();
   };
 
   useEffect(() => {

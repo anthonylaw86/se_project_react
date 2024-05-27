@@ -99,9 +99,9 @@ function App() {
       });
   };
 
-  const handleCardLike = ({ id, isLiked }) => {
+  const handleCardLike = ({ id, likes }) => {
     const token = localStorage.getItem("jwt");
-    !isLiked
+    !likes
       ? api
           .addCardLike(id, token)
           .then((updatedCard) => {
