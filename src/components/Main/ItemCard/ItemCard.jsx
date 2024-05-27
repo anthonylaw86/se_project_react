@@ -12,7 +12,15 @@ function ItemCard({ item, onCardClick, onCardLike, loggedIn }) {
   const currentUser = useContext(CurrentUserContext);
 
   const isLiked = item.likes.some((id) => id === currentUser._id);
-  console.log(onCardLike);
+  // console.log(onCardLike);
+
+  function onLike() {
+    onCardLike({
+      id: item._id,
+      isLiked: isLiked,
+      currentUser: currentUser,
+    });
+  }
 
   return (
     <li className="card__container">
@@ -20,7 +28,10 @@ function ItemCard({ item, onCardClick, onCardLike, loggedIn }) {
         <div className="card__name-container">
           <h2 className="card__name">{item.name}</h2>
           {loggedIn ? (
-            <button className="card__like-button" onClick={onCardLike}>
+            <button
+              className="card__like-button"
+              onClick={() => onLike(item._id, isLiked)}
+            >
               <img
                 src={isLiked ? likeIconFilled : likeIcon}
                 alt="like button"
