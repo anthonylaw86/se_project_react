@@ -4,7 +4,13 @@ import "./ClothesSection.css";
 import { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-function ClothesSection({ onCardClick, cards, handleAddClick, loggedIn }) {
+function ClothesSection({
+  onCardClick,
+  cards,
+  handleAddClick,
+  loggedIn,
+  onCardLike,
+}) {
   const currentUser = useContext(CurrentUserContext);
   return (
     <div className="clothes-section">
@@ -22,6 +28,7 @@ function ClothesSection({ onCardClick, cards, handleAddClick, loggedIn }) {
               item={item}
               onCardClick={onCardClick}
               loggedIn={loggedIn}
+              onCardLike={onCardLike}
             />
           );
         })}
