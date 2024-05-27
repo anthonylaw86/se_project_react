@@ -9,6 +9,7 @@ function Profile({
   handleEditProfileModal,
   setLoggedIn,
   loggedIn,
+  onCardLike,
 }) {
   return (
     <div className="profile">
@@ -24,6 +25,7 @@ function Profile({
           cards={cards}
           handleAddClick={handleAddClick}
           loggedIn={loggedIn}
+          onCardLike={onCardLike}
         />
       </section>
     </div>

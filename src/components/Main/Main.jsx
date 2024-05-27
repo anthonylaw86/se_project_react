@@ -6,7 +6,7 @@ import { useMemo, useContext } from "react";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import React from "react";
 
-function Main({ weatherData, onCardClick, onCardDelete, cards }) {
+function Main({ weatherData, onCardClick, onCardDelete, cards, onCardLike }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const temp = weatherData?.temp?.[currentTemperatureUnit] || 999;
 
@@ -30,6 +30,7 @@ function Main({ weatherData, onCardClick, onCardDelete, cards }) {
                   item={item}
                   onCardClick={onCardClick}
                   onCardDelete={onCardDelete}
+                  onCardLike={onCardLike}
                 />
               );
             })}

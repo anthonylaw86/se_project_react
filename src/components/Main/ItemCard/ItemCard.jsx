@@ -12,7 +12,7 @@ function ItemCard({ item, onCardClick, onCardLike, loggedIn }) {
   const currentUser = useContext(CurrentUserContext);
 
   const isLiked = item.likes.some((id) => id === currentUser._id);
-  console.log(isLiked);
+  console.log(onCardLike);
 
   return (
     <li className="card__container">
