@@ -33,7 +33,7 @@ function App() {
     temp: { F: 999 },
     city: "",
   });
-  const [activeModal, setActiveModal] = useState("edit");
+  const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
@@ -99,6 +99,26 @@ function App() {
       });
   };
 
+  const handleCardLike = ({ id, isLiked }) => {
+    const token = localStorage.getItem("jwt");
+    !isLiked
+      ? api
+          .addCardLike(id, token)
+          .then((updatedCard) => {
+            setClothingItems((cards) =>
+              cards.map(item._id === id ? updatedCard : item)
+            );
+          })
+          .catch((err) => console.log(err))
+      : api
+          .removeLike(id, token)
+          .then((updatedCard) => {
+            setClothingItems((cards) =>
+              cards.map((item) => (item._id === id ? updatedCard : item))
+            );
+          })
+          .catch((err) => console.log(err));
+  };
   // Authorization Handlers
   const handleSignup = ({ email, password, name, avatar }) => {
     auth
@@ -198,6 +218,7 @@ function App() {
                     cards={clothingItems}
                     onCardDelete={handleDeleteCard}
                     loggedIn={loggedIn}
+                    onCardLike={handleCardLike}
                   />
                 }
               />
@@ -212,6 +233,8 @@ function App() {
                       handleAddClick={handleAddClick}
                       handleEditProfileModal={handleEditProfileModal}
                       loggedIn={loggedIn}
+                      onCardLike={handleCardLike}
+                      setLoggedIn={setLoggedIn}
                     />
                   </ProtectedRoute>
                 }

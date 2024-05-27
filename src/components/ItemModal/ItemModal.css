@@ -11,11 +11,13 @@
 .modal__content_type_image {
   overflow: hidden;
   padding: 0;
+  margin: 0;
 }
 
 .modal__image {
-  width: 498px;
+  max-width: 498px;
   height: 498px;
+  width: 100%;
   overflow: contain;
   margin: 0;
   padding: 0;
@@ -33,8 +35,8 @@
 }
 
 .modal__footer {
-  margin-left: 32px;
-  margin-bottom: 32px;
+  margin-left: 0;
+  margin-bottom: 0;
   font-family: "CabinetGrotesk-m";
   font-weight: 700;
   line-height: 24px;
@@ -47,12 +49,12 @@
 }
 
 .modal__weather {
-  margin-top: 0;
+  margin: 0;
 }
 
 .modal__button {
-  position: relative;
-  bottom: 96px;
+  position: absolute;
+  bottom: 68px;
   left: 365px;
   background-color: transparent;
   border: none;

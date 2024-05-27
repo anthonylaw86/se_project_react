@@ -33,7 +33,7 @@ const addNewClothingItems = ({ name, imageUrl, weather }, token) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      authoriztion: `Bearer ${token}`,
+      authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({ name, imageUrl, weather }),
   }).then(checkResponse);
@@ -44,7 +44,25 @@ const deleteClothingItem = (id, token) => {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
-      authoriztion: `Bearer ${token}`,
+      authorization: `Bearer ${token}`,
+    },
+  }).then(checkResponse);
+};
+
+const addCardLike = (id, token) => {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "PUT",
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+  }).then(checkResponse);
+};
+
+const removeLike = (id, token) => {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "DELETE",
+    headers: {
+      authorization: `Bearer ${token}`,
     },
   }).then(checkResponse);
 };
@@ -53,6 +71,8 @@ const api = {
   getClothingItems,
   addNewClothingItems,
   deleteClothingItem,
+  addCardLike,
+  removeLike,
 };
 
 export default api;

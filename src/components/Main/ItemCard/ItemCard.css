@@ -3,6 +3,14 @@
   src: url("../../../vendor/CabinetGrotesk-Medium.otf");
 }
 
+.card__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
 .card {
   display: flex;
   justify-content: space-between;
@@ -15,11 +23,20 @@
   flex-direction: column;
   align-items: center;
 }
+.card__name-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
 
 .card__image {
   border-color: #000000;
   border-radius: 20px;
   width: 100%;
+  height: auto;
+  overflow: contain;
 }
 
 .card__name {
@@ -41,4 +58,18 @@
   color: #000000;
   opacity: 0.6;
   gap: 8px;
+}
+
+.card__like-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.card__like-button_img {
+  width: 20px;
+  height: 20px;
 }

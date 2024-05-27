@@ -7,6 +7,7 @@ function ItemModal({ activeModal, onClose, card, onCardDelete }) {
   const handleDeleteCard = (e) => {
     e.preventDefault();
     onCardDelete(card);
+    onClose();
   };
 
   const currentUser = useContext(CurrentUserContext);
@@ -25,7 +26,11 @@ function ItemModal({ activeModal, onClose, card, onCardDelete }) {
           <p className="modal__weather">Weather: {card.weather}</p>
         </div>
         {isOwn ? (
-          <button className="modal__button" onClick={handleDeleteCard}>
+          <button
+            type="text"
+            className="modal__button"
+            onClick={handleDeleteCard}
+          >
             Delete Item
           </button>
         ) : null}
