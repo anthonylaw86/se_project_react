@@ -4,21 +4,6 @@ export const checkResponse = (res) => {
 
 export const baseUrl = "http://localhost:3001";
 
-// class Api {
-//   constructor({ baseUrl = "http://localhost:3001", headers }) {
-//     this._baseUrl = baseUrl;
-//     this.headers = {
-//       "Content-Type": "application/json",
-//     };
-//   }
-
-// _checkValidResponse(res) {
-//   if (res.ok) {
-//     return res.json();
-//   }
-//   return Promise.reject(`Error ${res.status}`);
-// }
-
 const getClothingItems = () => {
   return fetch(`${baseUrl}/items`, {
     method: "GET",
