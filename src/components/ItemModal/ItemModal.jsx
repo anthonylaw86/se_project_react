@@ -7,7 +7,6 @@ function ItemModal({ activeModal, onClose, card, onCardDelete }) {
   const handleDeleteCard = (e) => {
     e.preventDefault();
     onCardDelete(card);
-    onClose();
   };
 
   const currentUser = useContext(CurrentUserContext);
