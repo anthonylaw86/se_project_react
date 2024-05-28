@@ -24,7 +24,7 @@
   align-items: center;
 }
 .card__name-container {
-  position: relative;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,14 +36,16 @@
 .card__image {
   border-color: #000000;
   border-radius: 20px;
-  width: 100%;
-  height: auto;
-  overflow: contain;
+  width: 328px;
+  height: 328px;
+
+  object-fit: cover;
+  cursor: pointer;
 }
 
 .card__name {
   position: relative;
-  /* top: 15px; */
+
   margin: 0;
   padding: 0;
   border: 4px;
