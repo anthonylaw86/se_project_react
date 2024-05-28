@@ -193,6 +193,22 @@ function App() {
     }
   }, [loggedIn]);
 
+  // useEffect's
+  useEffect(() => {
+    if (!activeModal) return;
+
+    const handleEscapeClose = (e) => {
+      if (e.key === "Escape") {
+        closeActiveModal();
+      }
+    };
+    document.addEventListener("keydown", handleEscapeClose);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscapeClose);
+    };
+  }, [activeModal]);
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <CurrentTemperatureUnitContext.Provider
