@@ -4,7 +4,11 @@ import { useState, useEffect } from "react";
 import { useForm } from "../../../hooks/useForm";
 
 const AddItemModal = ({ onAddItem, isOpen, onClose }) => {
-  const { values, handleChange, setValues } = useForm({});
+  const { values, handleChange, setValues } = useForm({
+    name: "",
+    imageUrl: "",
+    weather: "",
+  });
 
   const [name, setName] = useState("");
   const handleNameChange = (e) => {
@@ -31,11 +35,12 @@ const AddItemModal = ({ onAddItem, isOpen, onClose }) => {
 
   useEffect(() => {
     if (isOpen) {
-      setName("");
-      setUrl("");
-      setWeather("");
+      setValues({ name: "", imageUrl: "", weather: "" });
+      // setName("");
+      // setUrl("");
+      // setWeather("");
     }
-  }, [isOpen]);
+  }, [isOpen, setValues]);
 
   return (
     <ModalWithForm
@@ -52,7 +57,7 @@ const AddItemModal = ({ onAddItem, isOpen, onClose }) => {
           className="modal__input"
           id="name"
           placeholder="Name"
-          value={values}
+          value={values.name}
           onChange={handleChange}
           minLength="2"
           maxLength="40"
@@ -66,7 +71,7 @@ const AddItemModal = ({ onAddItem, isOpen, onClose }) => {
           className="modal__input"
           id="imageUrl"
           placeholder="Image URL"
-          value={imageUrl}
+          value={values.imageUrl}
           onChange={handleChange}
           required
         />
