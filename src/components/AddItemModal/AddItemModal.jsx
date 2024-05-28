@@ -64,6 +64,7 @@ const AddItemModal = ({ onAddItem, isOpen, onClose }) => {
           minLength="2"
           maxLength="40"
           required
+          name="name"
         />
       </label>
       <label className="modal__label">
@@ -76,6 +77,7 @@ const AddItemModal = ({ onAddItem, isOpen, onClose }) => {
           value={values.imageUrl}
           onChange={handleChange}
           required
+          name="imageUrl"
         />
       </label>
       <fieldset className="modal__radio-buttons">
