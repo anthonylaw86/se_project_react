@@ -2,7 +2,12 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useState, useEffect, useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-const EditProfileModal = ({ isOpen, onClose, handleEditProfile }) => {
+const EditProfileModal = ({
+  isOpen,
+  onClose,
+  handleEditProfile,
+  buttonText,
+}) => {
   const currentUser = useContext(CurrentUserContext);
 
   const [name, setName] = useState("");
@@ -34,7 +39,7 @@ const EditProfileModal = ({ isOpen, onClose, handleEditProfile }) => {
       title="Edit Profile"
       onClose={onClose}
       isOpen={isOpen}
-      buttonText="Save Changes"
+      buttonText={buttonText}
       onSubmit={handleSubmit}
     >
       <label className="modal__label">

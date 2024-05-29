@@ -13,7 +13,7 @@ function ClothesSection({
 }) {
   const currentUser = useContext(CurrentUserContext);
 
-  const userCards = cards.filter((item) => item.ownerId === currentUser.id);
+  const userCards = cards.filter((item) => item.owner === currentUser._id);
 
   return (
     <div className="clothes-section">

@@ -39,6 +39,7 @@ function App() {
   const [clothingItems, setClothingItems] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const handleToggleSwitchChange = () => {
     currentTemperatureUnit === "F"
@@ -73,30 +74,40 @@ function App() {
   };
 
   // Item Handlers
-  const handleDeleteCard = (card) => {
-    const token = localStorage.getItem("jwt");
-    api
-      .deleteClothingItem(card._id, token)
+  const handleSubmit = (request) => {
+    setIsLoading(true);
+    request()
       .then(() => {
-        setClothingItems((cards) => cards.filter((x) => x._id !== card._id));
         closeActiveModal();
       })
       .catch((res) => {
         console.log(`Error: ${res}`);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
+  };
+
+  const handleDeleteCard = (card) => {
+    const token = localStorage.getItem("jwt");
+    const makeRequest = () => {
+      return api.deleteClothingItem(card._id, token).then(() => {
+        setClothingItems((cards) => cards.filter((x) => x._id !== card._id));
+      });
+    };
+    handleSubmit(makeRequest);
   };
 
   const handleAddItemSubmit = ({ name, imageUrl, weather }) => {
     const token = localStorage.getItem("jwt");
-    api
-      .addNewClothingItems({ name, imageUrl, weather }, token)
-      .then(({ data }) => {
-        setClothingItems([data, ...clothingItems]);
-        closeActiveModal();
-      })
-      .catch((res) => {
-        console.log(`Error: ${res}`);
-      });
+    const makeRequest = () => {
+      return api
+        .addNewClothingItems({ name, imageUrl, weather }, token)
+        .then(({ data }) => {
+          setClothingItems([data, ...clothingItems]);
+        });
+    };
+    handleSubmit(makeRequest);
   };
 
   const handleCardLike = ({ id, isLiked }) => {
@@ -121,39 +132,36 @@ function App() {
   };
   // Authorization Handlers
   const handleSignup = ({ email, password, name, avatar }) => {
-    auth
-      .signUp({ email, password, name, avatar })
-      .then(() => {
+    const makeRequest = () => {
+      return auth.signUp({ email, password, name, avatar }).then(() => {
         handleSignUpModal({ email, password, name, avatar });
-        closeActiveModal();
         setCurrentUser({ email, password, name, avatar });
         setLoggedIn(true);
-      })
-      .catch((err) => console.log(err));
+      });
+    };
+    handleSubmit(makeRequest);
   };
 
   const handleLogin = ({ email, password }) => {
-    auth
-      .signIn({ email, password })
-      .then((res) => {
+    const makeRequest = () => {
+      return auth.signIn({ email, password }).then((res) => {
         handleLoginModal({ email, password });
         localStorage.setItem("jwt", res.token);
         setLoggedIn(true);
-        closeActiveModal();
-      })
-      .catch((err) => console.log(err));
+      });
+    };
+    handleSubmit(makeRequest);
   };
 
   const handleEditProfile = ({ name, avatar }) => {
     const token = localStorage.getItem("jwt");
-    auth
-      .editProfile({ name, avatar }, token)
-      .then((res) => {
+    const makeRequest = () => {
+      return auth.editProfile({ name, avatar }, token).then((res) => {
         handleEditProfileModal({ name, avatar });
         setCurrentUser(res);
-        closeActiveModal();
-      })
-      .catch((err) => console.log(err));
+      });
+    };
+    handleSubmit(makeRequest);
   };
 
   // useEffect API's
@@ -264,6 +272,7 @@ function App() {
             onClose={closeActiveModal}
             isOpen={activeModal === "add-garment"}
             onAddItem={handleAddItemSubmit}
+            buttonText={isLoading ? "Saving..." : "Save Garment"}
           />
 
           <ItemModal
@@ -278,6 +287,7 @@ function App() {
             onClose={closeActiveModal}
             handleSignUp={handleSignup}
             handleLoginModal={handleLoginModal}
+            buttonText={isLoading ? "Saving..." : "Sign Up"}
           />
 
           <LoginModal
@@ -285,12 +295,14 @@ function App() {
             onClose={closeActiveModal}
             handleSignUpModal={handleSignUpModal}
             handleLogin={handleLogin}
+            buttonText={isLoading ? "Saving..." : "Log In"}
           />
 
           <EditProfileModal
             isOpen={activeModal === "edit"}
             onClose={closeActiveModal}
             handleEditProfile={handleEditProfile}
+            buttonText={isLoading ? "Saving..." : "Save Changes"}
           />
         </div>
       </CurrentTemperatureUnitContext.Provider>

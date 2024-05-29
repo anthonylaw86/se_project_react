@@ -2,7 +2,13 @@ import React from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useState, useEffect } from "react";
 
-const RegisterModal = ({ onClose, isOpen, handleSignUp, handleLoginModal }) => {
+const RegisterModal = ({
+  onClose,
+  isOpen,
+  handleSignUp,
+  handleLoginModal,
+  buttonText,
+}) => {
   const [email, setEmail] = useState("");
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -40,7 +46,7 @@ const RegisterModal = ({ onClose, isOpen, handleSignUp, handleLoginModal }) => {
   return (
     <ModalWithForm
       title="Signup"
-      buttonText="Sign Up"
+      buttonText={buttonText}
       onClose={onClose}
       isOpen={isOpen}
       onSubmit={handleSubmit}
