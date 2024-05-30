@@ -20,7 +20,6 @@ const AddItemModal = ({ onAddItem, isOpen, onClose, buttonText }) => {
       setValues({ name: "", imageUrl: "", weather: "" });
     }
   }, [isOpen, setValues]);
-  console.log(values);
 
   return (
     <ModalWithForm

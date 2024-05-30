@@ -181,7 +181,6 @@ function App() {
       .getClothingItems()
       .then((items) => {
         setClothingItems(items);
-        console.log(clothingItems);
       })
       .catch((res) => {
         console.log(`Error: ${res}`);
