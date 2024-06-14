@@ -1,5 +1,3 @@
-import Api from "../utils/api";
-
 export const weatherOptions = [
   {
     day: true,
