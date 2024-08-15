@@ -23,7 +23,9 @@ Currently, two official plugins are available:
 
 ## Running The Project
 
-npm run dev or npm run start
+npm run dev - to launch the server with the hot reload feature.
+
+npm run start - to launch the server
 
 ## LINKS
 
