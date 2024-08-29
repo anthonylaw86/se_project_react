@@ -45,6 +45,12 @@ https://wtwr.madhacker.biz
 
 https://api.wtwr.madhacker.biz
 
+## Screenshots
+
 ![Screenshot 2024-08-05 194938](https://github.com/user-attachments/assets/7f91f9f4-db9c-4a04-a4e5-ed1595a0b537)
 
 ![Screenshot 2024-08-05 193021](https://github.com/user-attachments/assets/97fc73d2-51d1-4a15-88dd-d803343192a3)
+
+## Demo
+
+https://youtu.be/aLsh-bjeKOE?si=xYHE5GnhtIQa5Lrg
