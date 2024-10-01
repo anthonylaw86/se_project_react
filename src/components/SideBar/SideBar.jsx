@@ -2,10 +2,13 @@ import "./SideBar.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 function SideBar({ handleEditProfile, setLoggedIn }) {
   const navigate = useNavigate();
   const currentUser = useContext(CurrentUserContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   return (
     <div className="sidebar">
       <div className="sidebar__container">
@@ -14,18 +17,18 @@ function SideBar({ handleEditProfile, setLoggedIn }) {
           src={currentUser?.avatar}
           alt="Default avatar"
         />
-        <p className="sidebar__username">{currentUser?.name}</p>
+        <p className={`sidebar__username ${theme}`}>{currentUser?.name}</p>
       </div>
       <div className="sidebar__profile-data">
         <button
-          className="sidebar__user-button"
+          className={`sidebar__user-button ${theme}`}
           type="text"
           onClick={handleEditProfile}
         >
           Change profile data
         </button>
         <button
-          className="sidebar__user-button"
+          className={`sidebar__user-button ${theme}`}
           type="text"
           onClick={() => {
             navigate("/");

@@ -14,6 +14,9 @@
 
 .header__logo {
   margin-right: 24px;
+  background-color: #f3f3f3;
+  padding: 4px;
+  border-radius: 15px;
 }
 
 .header__date-and-location {
@@ -23,7 +26,7 @@
 
 .header__button-container {
   display: flex;
-  margin-left: auto;
+  margin-left: 0;
   gap: 20px;
 }
 
@@ -35,6 +38,10 @@
   cursor: pointer;
 }
 
+.header__add-clothes-btn.night {
+  color: #f3f3f3;
+}
+
 .header__user-container {
   display: flex;
   align-items: center;
@@ -44,6 +51,10 @@
 .header__username {
   margin: 0;
   line-height: 24.8px;
+}
+
+.header__username.night {
+  color: #f3f3f3;
 }
 
 .header__link {
@@ -62,4 +73,14 @@
   border-radius: 50%;
   object-fit: cover;
   margin: 0;
+}
+
+.header-theme-toggle_container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header__button.night {
+  color: #f3f3f3;
+  background-color: transparent;
 }
