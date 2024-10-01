@@ -18,7 +18,6 @@ function ThemeToggleSwitch({ onToggle, isDay }) {
         readOnly
         className="toggle-input"
       />
-      <span className="slider"></span>
     </div>
   );
 }

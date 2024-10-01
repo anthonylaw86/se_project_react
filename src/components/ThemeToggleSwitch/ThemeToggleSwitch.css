@@ -18,27 +18,6 @@
   display: none;
 }
 
-.slider {
-  width: 60px;
-  height: 34px;
-  background-color: black;
-  position: relative;
-  border-radius: 34px;
-  transition: background-color 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  border-radius: 50%;
-  transition: transform 0.4s;
-}
-
 .toggle-input:checked + .slider {
   background-color: rgb(57, 56, 56);
 }
